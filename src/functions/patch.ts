@@ -3,7 +3,8 @@ import https from "../core/getHTTPS";
 import protocol from "../handlers/protocol.js";
 
 interface RequestOptions {
-  secureProtocol?: string;
+  secure?: boolean;
+  secureProtocol?: 'TLSv1' | 'TLSv1.1' | 'TLSv1.2' | 'TLSv1.3';
   timeout?: number;
   [key: string]: any;
 }
@@ -20,7 +21,7 @@ export default async function patch(
   url: string,
   {
     secure = true,
-    secureProtocol = "TLSv1_2_method",
+    secureProtocol = "TLSv1.2",
     timeout = 5000,
     ...options
   }: RequestOptions = {},
