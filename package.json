@@ -1,6 +1,6 @@
 {
   "name": "sonicboomjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hyper fast nodejs webserver and fetcher",
   "main": "dist/index.js",
   "scripts": {
