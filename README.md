@@ -1,6 +1,6 @@
 <div align="center">
   <picture>
-      <img src="/assets/logo.png" width="45%" style="max-width: 75%;">
+      <img src="/assets/logo.png" width="25%" style="max-width: 75%;">
   </picture>
   <p>Whizz is a lightweight HTTP client library for Node.js that provides a simple and intuitive API for making HTTP requests. It supports various HTTP methods such as GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS, TRACE, and CONNECT.</p>
 
