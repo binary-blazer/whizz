@@ -17,8 +17,8 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm audit signatures
-      - name: Publish to GitHub Packages
+      - name: Publish
         env:
           GITHUB_TOKEN: ${{secrets.PAT}}
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: npm run semantic-release
+        run: npm run release
