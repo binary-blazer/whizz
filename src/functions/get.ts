@@ -16,9 +16,8 @@ interface Response {
   text: () => string;
 }
 
-export default async function post(
+export default async function get(
   url: string,
-  body: any,
   {
     secure = true,
     secureProtocol = "TLSv1_2_method",
@@ -37,7 +36,7 @@ export default async function post(
     const req = transportProtocol.request(
       url,
       {
-        method: "POST",
+        method: "GET",
         ...options,
       },
       (res) => {
@@ -70,7 +69,6 @@ export default async function post(
       reject(new Error("Request timed out"));
     });
 
-    req.write(JSON.stringify(body));
     req.end();
   });
 }
