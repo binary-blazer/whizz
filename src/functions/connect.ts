@@ -4,7 +4,6 @@ import protocol from "../handlers/protocol.js";
 
 interface RequestOptions {
   secure?: boolean;
-  secureProtocol?: 'TLSv1' | 'TLSv1.1' | 'TLSv1.2' | 'TLSv1.3';
   timeout?: number;
   [key: string]: any;
 }
@@ -21,7 +20,6 @@ export default async function connect(
   url: string,
   {
     secure = true,
-    secureProtocol = "TLSv1.2",
     timeout = 5000,
     ...options
   }: RequestOptions = {},
@@ -29,10 +27,6 @@ export default async function connect(
   return new Promise((resolve, reject) => {
     const transportProtocol = secure ? https : http;
     url = protocol(url, secure);
-
-    if (secure) {
-      options.secureProtocol = secureProtocol;
-    }
 
     const req = transportProtocol.request(
       url,
