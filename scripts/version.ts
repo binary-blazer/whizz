@@ -34,9 +34,7 @@ const commitChanges = (): Promise<void> => {
                 return;
             }
             if (stderr) {
-                console.error(`stderr: ${stderr}`);
-                reject(new Error(stderr));
-                return;
+                resolve();
             }
             console.log(`stdout: ${stdout}`);
             resolve();
