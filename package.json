@@ -4,6 +4,9 @@
   "description": "Hyper fast nodejs webserver and fetcher",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc",
     "format": "prettier --write .",
