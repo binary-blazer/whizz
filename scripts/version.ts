@@ -24,6 +24,11 @@ const commitChanges = (): Promise<void> => {
         const commitCommand = 'git add . && git commit -m "Update version and prepare release" && git push';
         exec(commitCommand, (error, stdout, stderr) => {
             if (error) {
+                if (stderr.includes('To https://github.com/')) {
+                    console.log(`stderr: ${stderr}`);
+                    resolve();
+                    return;
+                }
                 console.error(`Error committing changes: ${error.message}`);
                 reject(error);
                 return;
