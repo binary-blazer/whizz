@@ -1,6 +1,6 @@
 {
-  "name": "sonicboomjs",
-  "version": "1.2.0",
+  "name": "whizz",
+  "version": "1.0.0",
   "description": "Hyper fast nodejs webserver and fetcher",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,11 +24,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/binary-blazer/sonicboom.git"
+    "url": "git+https://github.com/binary-blazer/whizz.git"
   },
-  "homepage": "https://github.com/binary-blazer/sonicboom#readme",
+  "homepage": "https://github.com/binary-blazer/whizz#readme",
   "bugs": {
-    "url": "https://github.com/binary-blazer/sonicboom/issues"
+    "url": "https://github.com/binary-blazer/whizz/issues"
   },
   "author": {
     "name": "Jonas F. Franke <@binary-blazer>",

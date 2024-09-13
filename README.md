@@ -1,43 +1,41 @@
 <div align="center">
   <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="/assets/boom-dark.png">
-      <source media="(prefers-color-scheme: light)" srcset="/assets/boom-light.png">
-      <img src="/assets/boom-light.png" width="75%" style="max-width: 75%;">
+      <img src="/assets/logo.png" width="75%" style="max-width: 75%;">
   </picture>
-  <p>SonicBoom is a lightweight HTTP client library for Node.js that provides a simple and intuitive API for making HTTP requests. It supports various HTTP methods such as GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS, TRACE, and CONNECT.</p>
+  <p>Whizz is a lightweight HTTP client library for Node.js that provides a simple and intuitive API for making HTTP requests. It supports various HTTP methods such as GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS, TRACE, and CONNECT.</p>
 
   <p align="center">
-  <a aria-label="NPM version" href="https://www.npmjs.com/package/sonicboomjs">
-    <img alt="" src="https://img.shields.io/npm/v/sonicboomjs.svg?style=for-the-badge&labelColor=0e0a07">
+  <a aria-label="NPM version" href="https://www.npmjs.com/package/whizz">
+    <img alt="" src="https://img.shields.io/npm/v/whizz.svg?style=for-the-badge&labelColor=0e0a07">
   </a>
-  <a aria-label="NPM Downloads" href="https://www.npmjs.com/package/sonicboomjs">
-    <img alt="" src="https://img.shields.io/npm/dt/sonicboomjs.svg?style=for-the-badge&labelColor=0e0a07">
+  <a aria-label="NPM Downloads" href="https://www.npmjs.com/package/whizz">
+    <img alt="" src="https://img.shields.io/npm/dt/whizz.svg?style=for-the-badge&labelColor=0e0a07">
   </a>
-    <a aria-label="License" href="https://www.npmjs.com/package/sonicboomjs">
-    <img alt="" src="https://img.shields.io/npm/l/sonicboomjs?style=for-the-badge&labelColor=0e0a07">
+    <a aria-label="License" href="https://www.npmjs.com/package/whizz">
+    <img alt="" src="https://img.shields.io/npm/l/whizz?style=for-the-badge&labelColor=0e0a07">
     </a>
 </p>
 </div>
 
 ## Installation
-To install SonicBoom, use npm:
+To install Whizz, use npm:
 ```sh
-npm install sonicboomjs
+npm install whizz
 # or
-yarn add sonicboomjs
+yarn add whizz
 # or
-pnpm install sonicboomjs
+pnpm install whizz
 ```
 
 ## Usage
-Here are some examples of how to use SonicBoom:
+Here are some examples of how to use Whizz:
 
 ### GET Request
 ```js
-import sonicboom from 'sonicboomjs';
+import whizz from 'whizz';
 
 async function fetchData() {
-  const response = await sonicboom.get('https://jsonplaceholder.typicode.com/posts/1', { secure: true });
+  const response = await whizz.get('https://jsonplaceholder.typicode.com/posts/1', { secure: true });
   const data = response.json();
   console.log(data);
 }
@@ -47,10 +45,10 @@ fetchData();
 
 ### POST Request
 ```js
-import sonicboom from 'sonicboomjs';
+import whizz from 'whizz';
 
 async function postData() {
-  const response = await sonicboom.post('https://jsonplaceholder.typicode.com/posts', { secure: false } {
+  const response = await whizz.post('https://jsonplaceholder.typicode.com/posts', { secure: false } {
     title: 'foo',
     body: 'bar',
     userId: 1,
