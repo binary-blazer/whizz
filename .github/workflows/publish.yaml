@@ -19,3 +19,27 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.PAT }}
+
+      - name: 📦 Publish to GitHub Package Registry
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.PAT }}
+        run: |
+          npm config set registry https://npm.pkg.github.com
+          npm set //npm.pkg.github.com/:_authToken ${{ secrets.PAT }}
+          if [ "${{ github.event.release.prerelease }}" = "false" ]; then
+            npm publish
+          else
+            npm publish --tag next
+          fi
+     
+      - name: 📦 Publish to NPM Registry
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npm config set registry https://registry.npmjs.org
+          npm set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+          if [ "${{ github.event.release.prerelease }}" = "false" ]; then
+            npm publish
+          else
+            npm publish --tag next
+          fi
