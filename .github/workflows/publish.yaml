@@ -10,15 +10,25 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v4
+      
       - uses: actions/setup-node@v4
         with:
           node-version: '20.x'
           registry-url: 'https://npm.pkg.github.com'
+
       - run: npm ci
+
       - run: npm run build
+
       - run: npm audit signatures
-      - name: Publish
-        env:
-          GITHUB_TOKEN: ${{secrets.PAT}}
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: npm run release
+
+      - name: Publish to NPM Registry
+        uses: JS-DevTools/npm-publish@v3
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish to GitHub Package Registry
+        uses: JS-DevTools/npm-publish@v3
+        with:
+          token: ${{ secrets.PAT }}
+          registry: "https://npm.pkg.github.com"
