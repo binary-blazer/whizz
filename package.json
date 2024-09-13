@@ -10,6 +10,9 @@
     "release": "semantic-release",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "release": {
+      "branches": ["main", {"name": "refs/tags/*"}, {"name": "next", "prerelease": true}]
+  },
   "files": [
     "dist",
     "assets",
