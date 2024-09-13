@@ -1,0 +1,12 @@
+{
+  "name": "@sonicboom/testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "GPL-3.0-only"
+}

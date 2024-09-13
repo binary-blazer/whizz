@@ -1,0 +1,22 @@
+{
+  "name": "sonicboom-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.5.4",
+    "prettier": "^3.3.3",
+    "release-it": "^17.6.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  }
+}
