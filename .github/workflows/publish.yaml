@@ -16,25 +16,9 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
       - run: npm ci
       - run: npm run build
-      - name: 📦 Publish to GitHub Package Registry
+      - run: npm audit signatures
+      - name: Publish to GitHub Packages
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.PAT }}
-        run: |
-          npm config set registry https://npm.pkg.github.com
-          npm set //npm.pkg.github.com/:_authToken ${{ secrets.PAT }}
-          if [ "${{ github.event.release.prerelease }}" = "false" ]; then
-            npm publish
-          else
-            npm publish --tag next
-          fi
-      - name: 📦 Publish to NPM Registry
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          npm config set registry https://registry.npmjs.org
-          npm set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
-          if [ "${{ github.event.release.prerelease }}" = "false" ]; then
-            npm publish
-          else
-            npm publish --tag next
-          fi
+          GITHUB_TOKEN: ${{secrets.PAT}}
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: npm run semantic-release
