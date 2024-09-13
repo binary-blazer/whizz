@@ -37,7 +37,7 @@ Here are some examples of how to use SonicBoom:
 import sonicboom from 'sonicboomjs';
 
 async function fetchData() {
-  const response = await sonicboom.get('https://jsonplaceholder.typicode.com/posts/1');
+  const response = await sonicboom.get('https://jsonplaceholder.typicode.com/posts/1', { secure: true });
   const data = response.json();
   console.log(data);
 }
@@ -50,7 +50,7 @@ fetchData();
 import sonicboom from 'sonicboomjs';
 
 async function postData() {
-  const response = await sonicboom.post('https://jsonplaceholder.typicode.com/posts', {
+  const response = await sonicboom.post('https://jsonplaceholder.typicode.com/posts', { secure: false } {
     title: 'foo',
     body: 'bar',
     userId: 1,
