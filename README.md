@@ -7,14 +7,14 @@
   <p>SonicBoom is a lightweight HTTP client library for Node.js that provides a simple and intuitive API for making HTTP requests. It supports various HTTP methods such as GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS, TRACE, and CONNECT.</p>
 
   <p align="center">
-  <a aria-label="NPM version" href="https://www.npmjs.com/package/sonicboom">
-    <img alt="" src="https://img.shields.io/npm/v/sonicboom.svg?style=for-the-badge&labelColor=0e0a07">
+  <a aria-label="NPM version" href="https://www.npmjs.com/package/sonicboomjs">
+    <img alt="" src="https://img.shields.io/npm/v/sonicboomjs.svg?style=for-the-badge&labelColor=0e0a07">
   </a>
-  <a aria-label="NPM Downloads" href="https://www.npmjs.com/package/sonicboom">
-    <img alt="" src="https://img.shields.io/npm/dt/sonicboom.svg?style=for-the-badge&labelColor=0e0a07">
+  <a aria-label="NPM Downloads" href="https://www.npmjs.com/package/sonicboomjs">
+    <img alt="" src="https://img.shields.io/npm/dt/sonicboomjs.svg?style=for-the-badge&labelColor=0e0a07">
   </a>
-    <a aria-label="License" href="https://www.npmjs.com/package/sonicboom">
-    <img alt="" src="https://img.shields.io/npm/l/sonicboom?style=for-the-badge&labelColor=0e0a07">
+    <a aria-label="License" href="https://www.npmjs.com/package/sonicboomjs">
+    <img alt="" src="https://img.shields.io/npm/l/sonicboomjs?style=for-the-badge&labelColor=0e0a07">
     </a>
 </p>
 </div>
