@@ -16,10 +16,6 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
       - run: npm ci
       - run: npm run build
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.PAT }}
-
       - name: 📦 Publish to GitHub Package Registry
         env:
           NODE_AUTH_TOKEN: ${{ secrets.PAT }}
@@ -31,7 +27,6 @@ jobs:
           else
             npm publish --tag next
           fi
-     
       - name: 📦 Publish to NPM Registry
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
