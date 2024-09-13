@@ -22,11 +22,11 @@
 ## Installation
 To install SonicBoom, use npm:
 ```sh
-npm install sonicboom
+npm install sonicboomjs
 # or
-yarn add sonicboom
+yarn add sonicboomjs
 # or
-pnpm install sonicboom
+pnpm install sonicboomjs
 ```
 
 ## Usage
@@ -34,7 +34,7 @@ Here are some examples of how to use SonicBoom:
 
 ### GET Request
 ```js
-import sonicboom from 'sonicboom';
+import sonicboom from 'sonicboomjs';
 
 async function fetchData() {
   const response = await sonicboom.get('https://jsonplaceholder.typicode.com/posts/1');
@@ -47,7 +47,7 @@ fetchData();
 
 ### POST Request
 ```js
-import sonicboom from 'sonicboom';
+import sonicboom from 'sonicboomjs';
 
 async function postData() {
   const response = await sonicboom.post('https://jsonplaceholder.typicode.com/posts', {
