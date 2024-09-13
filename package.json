@@ -9,11 +9,24 @@
     "format:check": "prettier --check .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "keywords": [
     "nodejs",
     "webserver",
     "fetcher"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/binary-blazer/sonicboom.git"
+  },
+  "homepage": "https://github.com/binary-blazer/sonicboom#readme",
+  "bugs": {
+    "url": "https://github.com/binary-blazer/sonicboom/issues"
+  },
   "author": {
     "name": "Jonas F. Franke <@binary-blazer>",
     "email": "jonasfranke@sdevs.org",
