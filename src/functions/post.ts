@@ -74,7 +74,7 @@ export default async function post(
       reject(new Error("Request timed out"));
     });
 
-    req.write(data);
+    // req.write(data);
     req.end();
   });
 }
