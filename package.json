@@ -1,7 +1,7 @@
 {
-  "name": "sonicboom-test",
+  "name": "sonicboom",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hyper fast nodejs webserver and fetcher",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
@@ -9,9 +9,17 @@
     "format:check": "prettier --check .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "nodejs",
+    "webserver",
+    "fetcher"
+  ],
+  "author": {
+    "name": "Jonas F. Franke <@binary-blazer>",
+    "email": "jonasfranke@sdevs.org",
+    "url": "https://binaryblazer.me"
+  },
+  "license": "GPL-3.0-only",
   "devDependencies": {
     "@types/node": "^22.5.4",
     "prettier": "^3.3.3",
