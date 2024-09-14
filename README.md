@@ -56,6 +56,8 @@ async function postData() {
     body: 'bar',
     userId: 1,
   }, { secure: false });
+
+  const response = await whizz.post('https://jsonplaceholder.typicode.com/posts', { title: 'foo' }, { secure: true });       
   
   const data = response.json();
   console.log(data);
@@ -63,6 +65,8 @@ async function postData() {
 
 postData();
 ```
+
+<img src="/assets/post.png" width="100%" style="max-width: 100%;">
 
 ## API Documentation
 ### `get(url: string, options?: RequestOptions): Promise<Response>`
