@@ -1,2 +1,2 @@
-import https from "https";
+import { https } from "./__tssl/client";
 export default https;
