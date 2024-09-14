@@ -1,6 +1,6 @@
 <div align="center">
   <picture>
-      <img src="/assets/logo.png" width="25%" style="max-width: 75%;">
+      <img src="https://raw.githubusercontent.com/binary-blazer/whizz/main/assets/logo.png" width="25%" style="max-width: 75%;">
   </picture>
   <p>Whizz is a lightweight http client built on top of http for pure efficiency and speed</p>
 
@@ -47,7 +47,7 @@ async function fetchData() {
 fetchData();
 ```
 
-<img src="/assets/get.png" width="100%" style="max-width: 100%;">
+<img src="https://raw.githubusercontent.com/binary-blazer/whizz/main/assets/get.png" width="100%" style="max-width: 100%;">
 
 ### POST Request
 ```js
@@ -67,7 +67,7 @@ async function postData() {
 postData();
 ```
 
-<img src="/assets/post.png" width="100%" style="max-width: 100%;">
+<img src="https://raw.githubusercontent.com/binary-blazer/whizz/main/assets/post.png" width="100%" style="max-width: 100%;">
 
 ## API Documentation
 ### `get(url: string, options?: RequestOptions): Promise<Response>`
