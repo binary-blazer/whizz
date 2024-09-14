@@ -41,10 +41,13 @@ async function fetchData() {
   const response = await whizz.get('https://jsonplaceholder.typicode.com/posts/1', { secure: true, timeout: 2000 });
   const data = response.json();
   console.log(data);
+
 }
 
 fetchData();
 ```
+
+<img src="/assets/get.png" width="100%" style="max-width: 100%;">
 
 ### POST Request
 ```js
@@ -55,9 +58,7 @@ async function postData() {
     title: 'foo',
     body: 'bar',
     userId: 1,
-  }, { secure: false });
-
-  const response = await whizz.post('https://jsonplaceholder.typicode.com/posts', { title: 'foo' }, { secure: true });       
+  }, { secure: false }); 
   
   const data = response.json();
   console.log(data);
