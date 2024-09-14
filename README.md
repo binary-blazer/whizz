@@ -2,11 +2,14 @@
   <picture>
       <img src="/assets/logo.png" width="25%" style="max-width: 75%;">
   </picture>
-  <p>Whizz is a lightweight HTTP client library for Node.js that provides a simple and intuitive API for making HTTP requests. It supports various HTTP methods such as GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS, TRACE, and CONNECT.</p>
+  <p>Whizz is a lightweight http client built on top of http for pure efficiency and speed</p>
 
   <p align="center">
   <a aria-label="NPM version" href="https://www.npmjs.com/package/whizz">
     <img alt="" src="https://img.shields.io/npm/v/whizz.svg?style=for-the-badge&labelColor=0e0a07">
+  </a>
+  <a aria-label="Size" href="https://www.npmjs.com/package/whizz">
+    <img alt="" src="https://img.shields.io/npm/unpacked-size/whizz?style=for-the-badge&labelColor=0e0a07">
   </a>
   <a aria-label="NPM Downloads" href="https://www.npmjs.com/package/whizz">
     <img alt="" src="https://img.shields.io/npm/dt/whizz.svg?style=for-the-badge&labelColor=0e0a07">
@@ -18,7 +21,7 @@
 </div>
 
 ## Installation
-To install Whizz, use npm:
+To install Whizz:
 ```sh
 npm install whizz
 # or
@@ -35,30 +38,36 @@ Here are some examples of how to use Whizz:
 import whizz from 'whizz';
 
 async function fetchData() {
-  const response = await whizz.get('https://jsonplaceholder.typicode.com/posts/1', { secure: true });
+  const response = await whizz.get('https://jsonplaceholder.typicode.com/posts/1', { secure: true, timeout: 2000 });
   const data = response.json();
   console.log(data);
+
 }
 
 fetchData();
 ```
+
+<img src="/assets/get.png" width="100%" style="max-width: 100%;">
 
 ### POST Request
 ```js
 import whizz from 'whizz';
 
 async function postData() {
-  const response = await whizz.post('https://jsonplaceholder.typicode.com/posts', { secure: false } {
+  const response = await whizz.post('https://jsonplaceholder.typicode.com/posts', {
     title: 'foo',
     body: 'bar',
     userId: 1,
-  });
+  }, { secure: false }); 
+  
   const data = response.json();
   console.log(data);
 }
 
 postData();
 ```
+
+<img src="/assets/post.png" width="100%" style="max-width: 100%;">
 
 ## API Documentation
 ### `get(url: string, options?: RequestOptions): Promise<Response>`

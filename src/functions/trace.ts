@@ -9,11 +9,14 @@ interface RequestOptions {
 }
 
 interface Response {
-  data: string;
+  data: any;
+  request: {
+    headers: any;
+    statusCode: number;
+    ok: boolean;
+  };
   statusCode: number;
-  headers: http.IncomingHttpHeaders;
-  json: () => any;
-  text: () => string;
+  ok: boolean;
 }
 
 export default async function trace(
@@ -35,21 +38,57 @@ export default async function trace(
         ...options,
       },
       (res) => {
-        let data = "";
+        let data: any[] = [];
         res.on("data", (chunk) => {
-          data += chunk;
+          data.push(chunk);
         });
         res.on("end", () => {
+          const buffer = Buffer.concat(data);
+          const contentType = res.headers['content-type'] || '';
+
+          let parsedData: any;
+          if (contentType.includes('application/json')) {
+            try {
+              parsedData = JSON.parse(buffer.toString());
+            } catch (e) {
+              parsedData = buffer.toString();
+            }
+          } else if (contentType.includes('text/')) {
+            parsedData = buffer.toString();
+          } else {
+            parsedData = buffer;
+          }
+
+          let returnx;
+          if (contentType.includes('text/')) {
+            returnx = { data: parsedData };
+          } else {
+            returnx = parsedData;
+          }
+
           resolve({
-            data,
-            statusCode: res.statusCode || 0,
-            headers: res.headers,
-            json: () => ({
-              data: JSON.parse(data),
-              statusCode: res.statusCode || 0,
+            ...returnx,
+            request: {
               headers: res.headers,
+              statusCode: res.statusCode || 0,
+              ok: (res.statusCode ? (res.statusCode >= 200 && res.statusCode < 300) : false) ? true : false,
+            },
+            statusCode: res.statusCode || 0,
+            ok: (res.statusCode ? (res.statusCode >= 200 && res.statusCode < 300) : false) ? true : false,
+            json: () => new Promise((resolve, reject) => {
+              try {
+                resolve(JSON.parse(parsedData));
+              } catch (e) {
+                reject(e);
+              }
             }),
-            text: () => data,
+            text: () => new Promise((resolve, reject) => {
+              try {
+                resolve(parsedData);
+              } catch (e) {
+                reject(e);
+              }
+            }),
           });
         });
       },
