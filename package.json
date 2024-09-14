@@ -1,6 +1,6 @@
 {
   "name": "whizz",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Hyper fast nodejs webserver and fetcher",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,10 +16,7 @@
   },
   "files": [
     "dist",
-    "assets",
-    "node_modules",
-    "README.md",
-    "LICENSE"
+    "README.md"
   ],
   "keywords": [
     "nodejs",
