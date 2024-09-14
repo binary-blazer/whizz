@@ -64,8 +64,15 @@ export default async function put(
             parsedData = buffer;
           }
 
+          let returnx;
+          if (contentType.includes('text/')) {
+            returnx = { data: parsedData };
+          } else {
+            returnx = parsedData;
+          }
+
           resolve({
-            data: parsedData,
+            ...returnx,
             request: {
               headers: res.headers,
               statusCode: res.statusCode || 0,
@@ -73,6 +80,20 @@ export default async function put(
             },
             statusCode: res.statusCode || 0,
             ok: (res.statusCode ? (res.statusCode >= 200 && res.statusCode < 300) : false) ? true : false,
+            json: () => new Promise((resolve, reject) => {
+              try {
+                resolve(JSON.parse(parsedData));
+              } catch (e) {
+                reject(e);
+              }
+            }),
+            text: () => new Promise((resolve, reject) => {
+              try {
+                resolve(parsedData);
+              } catch (e) {
+                reject(e);
+              }
+            }),
           });
         });
       },
