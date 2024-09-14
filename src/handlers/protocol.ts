@@ -4,7 +4,7 @@ export default function protocol(url: string, secure: boolean): string {
   if (secure) {
     if (url.startsWith("http://")) {
       console.log(
-        `${colors.warning}HTTP protocol detected in URL but secure is set to true. Defaulting to HTTPS${colors.clear}`,
+        `${colors.warning}HTTP protocol detected in URL but secure is set to true, defaulting to HTTPS${colors.clear}`,
       );
       return `https://${url.replace("http://", "")}`;
     }
@@ -12,7 +12,7 @@ export default function protocol(url: string, secure: boolean): string {
   } else {
     if (url.startsWith("https://")) {
       console.log(
-        `${colors.warning}HTTPS protocol detected in URL but secure is set to false. Defaulting to HTTP${colors.clear}`,
+        `${colors.warning}HTTPS protocol detected in URL but secure is set to false, defaulting to HTTP${colors.clear}`,
       );
       return `http://${url.replace("https://", "")}`;
     }
